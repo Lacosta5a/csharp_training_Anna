@@ -69,7 +69,8 @@
     <Compile Include="Figures\Figure.cs" />
     <Compile Include="Model\GroupData.cs" />
     <Compile Include="Appmanager\GroupHelper.cs" />
-    <Compile Include="Tests\GroupRemovalTest.cs" />
+    <Compile Include="Tests\GroupModificationTests.cs" />
+    <Compile Include="Tests\GroupRemovalTests.cs" />
     <Compile Include="Appmanager\HelperBase.cs" />
     <Compile Include="Appmanager\LoginHelper.cs" />
     <Compile Include="Appmanager\NavigationHelper.cs" />
