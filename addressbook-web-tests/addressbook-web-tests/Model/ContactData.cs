@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace addressbook_web_tests
+namespace WebAddressbookTests
 {
-    internal class ContactData
+    public class ContactData
     {
-        private string name;
-        private string surname = "";
+        public string name;
+        public string surname = "";
 
         public ContactData (string name)
         {
