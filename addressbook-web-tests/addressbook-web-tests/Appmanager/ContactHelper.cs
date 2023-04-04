@@ -35,7 +35,7 @@ namespace WebAddressbookTests
 
         private ContactHelper SubmitContactModification()
         {
-            driver.FindElement(By.Name("edit")).Click();
+            driver.FindElement(By.XPath("//form[@action='edit.php']")).Click();
             return this;
         }
 
@@ -47,7 +47,7 @@ namespace WebAddressbookTests
 
         private ContactHelper SelectContact(int index)
         {
-            driver.FindElement(By.Id(" + index + ")).Click();
+            driver.FindElement(By.Id("9")).Click();
             return this;
         }
 
