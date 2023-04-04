@@ -23,6 +23,33 @@ namespace WebAddressbookTests
             ReturnToHomePage();
             return this;
         }
+        public ContactHelper Modify(int v, ContactData newData)
+        {
+            SelectContact(v);
+            InitContactModification();
+            FillInContactData(newData);
+            SubmitContactModification();
+            ReturnToHomePage();
+            return this;
+        }
+
+        private ContactHelper SubmitContactModification()
+        {
+            driver.FindElement(By.Name("edit")).Click();
+            return this;
+        }
+
+        private ContactHelper InitContactModification()
+        {
+            driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
+            return this;
+        }
+
+        private ContactHelper SelectContact(int index)
+        {
+            driver.FindElement(By.Id(" + index + ")).Click();
+            return this;
+        }
 
         public ContactHelper ReturnToHomePage()
         {
@@ -51,6 +78,6 @@ namespace WebAddressbookTests
         {
             driver.FindElement(By.LinkText("add new")).Click();
             return this;
-        }
+        }     
     }
 }
