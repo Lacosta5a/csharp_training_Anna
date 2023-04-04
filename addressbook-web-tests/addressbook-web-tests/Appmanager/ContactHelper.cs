@@ -32,10 +32,30 @@ namespace WebAddressbookTests
             ReturnToHomePage();
             return this;
         }
+        public ContactHelper Remove(int v)
+        {
+            SelectContact(v);
+            RemoveContact();
+            SubmitContactRemoval();
+            return this;
+        }
+
+        private ContactHelper SubmitContactRemoval()
+        {
+            driver.SwitchTo().Alert().Accept();
+            return this;
+        }
+
+        private ContactHelper RemoveContact()
+        {
+            driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
+            return this;
+        }
 
         private ContactHelper SubmitContactModification()
         {
             driver.FindElement(By.XPath("//form[@action='edit.php']")).Click();
+            driver.FindElement(By.XPath("//div[@id='content']/form/input[22]")).Click();
             return this;
         }
 
@@ -78,6 +98,6 @@ namespace WebAddressbookTests
         {
             driver.FindElement(By.LinkText("add new")).Click();
             return this;
-        }     
+        } 
     }
 }
