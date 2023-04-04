@@ -6,12 +6,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Text.RegularExpressions;
 
 namespace WebAddressbookTests
 {
     public class ContactHelper : HelperBase
     {
+        private bool acceptNextAlert;
+
         public ContactHelper(ApplicationManager manager) : base(manager)
         {
         }
@@ -36,22 +38,18 @@ namespace WebAddressbookTests
         {
             SelectContact(v);
             RemoveContact();
-            SubmitContactRemoval();
             return this;
         }
 
-        private ContactHelper SubmitContactRemoval()
+ 
+        private ContactHelper RemoveContact()
         {
+            driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
             driver.SwitchTo().Alert().Accept();
             return this;
         }
 
-        private ContactHelper RemoveContact()
-        {
-            driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
-            return this;
-        }
-
+      
         private ContactHelper SubmitContactModification()
         {
             driver.FindElement(By.XPath("//form[@action='edit.php']")).Click();
@@ -67,7 +65,7 @@ namespace WebAddressbookTests
 
         private ContactHelper SelectContact(int index)
         {
-            driver.FindElement(By.Id("9")).Click();
+            driver.FindElement(By.XPath("//*[@id='maintable']//tr[1]"));
             return this;
         }
 
