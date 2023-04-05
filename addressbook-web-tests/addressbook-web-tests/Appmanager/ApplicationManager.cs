@@ -30,8 +30,6 @@ namespace WebAddressbookTests
             groupHelper = new GroupHelper(this);
             contactHelper = new ContactHelper(this);
 
-            driver = new FirefoxDriver();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
         }
         public IWebDriver Driver
         {

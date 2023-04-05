@@ -27,7 +27,7 @@ namespace WebAddressbookTests
         }
         public ContactHelper Modify(int v, ContactData newData)
         {
-            SelectContact(v);
+            SelectRowWithContact();
             InitContactModification();
             FillInContactData(newData);
             SubmitContactModification();
@@ -36,17 +36,24 @@ namespace WebAddressbookTests
         }
         public ContactHelper Remove(int v)
         {
-            SelectContact(v);
+            SelectRowWithContact();
             RemoveContact();
             return this;
         }
 
- 
+        private ContactHelper SelectRowWithContact()
+        {
+            driver.FindElement(By.XPath("//*[@id='maintable']//tr[1]"));
+            return this;
+        }
+
+       
         private ContactHelper RemoveContact()
         {
+            driver.FindElement(By.XPath("//input[@name='selected[]']")).Click();
             driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
             driver.SwitchTo().Alert().Accept();
-            driver.FindElement(By.CssSelector("div.msgbox"));
+            driver.FindElement(By.LinkText("home")).Click();
             return this;
         }
 
@@ -64,12 +71,7 @@ namespace WebAddressbookTests
             return this;
         }
 
-        private ContactHelper SelectContact(int index)
-        {
-            driver.FindElement(By.XPath("//*[@id='maintable']//tr[1]"));
-            return this;
-        }
-
+ 
         public ContactHelper ReturnToHomePage()
         {
             driver.FindElement(By.LinkText("home page")).Click();
