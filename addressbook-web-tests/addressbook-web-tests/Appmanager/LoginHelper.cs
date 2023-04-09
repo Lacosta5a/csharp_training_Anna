@@ -18,9 +18,34 @@ namespace WebAddressbookTests
         }
         public void Login(AccountData account)
         {
+            if (isLoggedIn())
+            {
+                if (isLoggedIn(account))
+                {
+                    return;
+                }
+
+                Logout();
+            }
             Type(By.Name("user"), account.Username);
             Type(By.Name("pass"), account.Password);
             driver.FindElement(By.XPath("//input[@value='Login']")).Click();
         }
+
+        public bool isLoggedIn(AccountData account)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool isLoggedIn()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Logout()
+        {
+            driver.FindElement(By.LinkText("Logout")).Click();
+        }
+    }
     }
 }
