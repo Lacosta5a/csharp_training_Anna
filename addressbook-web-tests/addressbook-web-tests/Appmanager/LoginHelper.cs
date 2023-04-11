@@ -18,9 +18,9 @@ namespace WebAddressbookTests
         }
         public void Login(AccountData account)
         {
-            if (isLoggedIn())
+            if (IsLoggedIn())
             {
-                if (isLoggedIn(account))
+                if (IsLoggedIn(account))
                 {
                     return;
                 }
@@ -32,20 +32,24 @@ namespace WebAddressbookTests
             driver.FindElement(By.XPath("//input[@value='Login']")).Click();
         }
 
-        public bool isLoggedIn(AccountData account)
+        public bool IsLoggedIn(AccountData account)
         {
-            throw new NotImplementedException();
+            return IsLoggedIn()
+                && driver.FindElement(By.Name("logout")).FindElement(By.TagName("b")).Text 
+                 == "(" + account.Username + ")";
         }
 
-        public bool isLoggedIn()
+        public bool IsLoggedIn()
         {
-            throw new NotImplementedException();
+            return IsElementPresent(By.Name("logout"));
         }
 
         public void Logout()
         {
-            driver.FindElement(By.LinkText("Logout")).Click();
+            if (IsLoggedIn())
+            {
+                driver.FindElement(By.LinkText("Logout")).Click();
+            }
         }
-    }
     }
 }
