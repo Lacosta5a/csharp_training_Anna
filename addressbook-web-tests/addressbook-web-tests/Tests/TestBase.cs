@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebAddressbookTests
 {
-    public class TestBase
+    public class TestBase 
     {
         protected ApplicationManager app;
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using OpenQA.Selenium;
 
 namespace WebAddressbookTests
 {
@@ -17,6 +18,7 @@ namespace WebAddressbookTests
             newData.Header = null;
             newData.Footer = null;
 
+            app.Groups.CheckGroupPresence();
             app.Groups.Modify(1, newData);
         }
     }

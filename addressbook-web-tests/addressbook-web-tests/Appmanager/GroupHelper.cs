@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace WebAddressbookTests
 {
@@ -61,12 +62,20 @@ namespace WebAddressbookTests
             return this;
         }
 
-        public GroupHelper SelectGroup(int index)
+        public void CheckGroupPresence()
         {
-            if (!IsElementPresent(By.Name("selected[]")))
+            if (IsElementPresent(By.Name("selected[]")))
+            {
+                return;
+            }
+            else
             {
                 Create(new GroupData("aaa"));
             }
+        }
+
+        public GroupHelper SelectGroup(int index)
+        {
             driver.FindElement(By.XPath("//div[@id='content']/form/span[" + index + "]/input")).Click();
             return this;
         }
