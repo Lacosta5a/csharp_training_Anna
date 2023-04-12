@@ -43,6 +43,10 @@ namespace WebAddressbookTests
 
         private ContactHelper SelectRowWithContact()
         {
+            if (!IsElementPresent(By.Name("selected[]")))
+            {
+                Create(new ContactData("aaa"));
+            }
             driver.FindElement(By.XPath("//*[@id='maintable']//tr[1]"));
             return this;
         }
