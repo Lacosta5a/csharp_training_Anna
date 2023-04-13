@@ -41,18 +41,25 @@ namespace WebAddressbookTests
             return this;
         }
 
-        private ContactHelper SelectRowWithContact()
+        public void CheckContactPresence()
         {
-            if (!IsElementPresent(By.Name("selected[]")))
+            if (IsElementPresent(By.Name("selected[]")))
+            {
+                return;
+            }
+            else
             {
                 Create(new ContactData("aaa"));
             }
+        }
+        public ContactHelper SelectRowWithContact()
+        {
             driver.FindElement(By.XPath("//*[@id='maintable']//tr[1]"));
             return this;
         }
 
-       
-        private ContactHelper RemoveContact()
+
+        public ContactHelper RemoveContact()
         {
             driver.FindElement(By.XPath("//input[@name='selected[]']")).Click();
             driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
@@ -61,21 +68,21 @@ namespace WebAddressbookTests
             return this;
         }
 
-      
-        private ContactHelper SubmitContactModification()
+
+        public ContactHelper SubmitContactModification()
         {
             driver.FindElement(By.XPath("//form[@action='edit.php']")).Click();
             driver.FindElement(By.XPath("//div[@id='content']/form/input[22]")).Click();
             return this;
         }
 
-        private ContactHelper InitContactModification()
+        public ContactHelper InitContactModification()
         {
             driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
             return this;
         }
 
- 
+
         public ContactHelper ReturnToHomePage()
         {
             driver.FindElement(By.LinkText("home page")).Click();
