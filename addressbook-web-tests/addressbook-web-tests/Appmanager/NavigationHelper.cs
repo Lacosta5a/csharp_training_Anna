@@ -12,7 +12,7 @@ namespace WebAddressbookTests
 {
     public class NavigationHelper : HelperBase
     {
-        private string baseURL;
+        public string baseURL;
 
         public NavigationHelper(ApplicationManager manager, string baseURL) : base(manager)
         {
@@ -34,6 +34,14 @@ namespace WebAddressbookTests
                 return;
             }
             driver.FindElement(By.LinkText("groups")).Click();
+        }
+        public void ReturnToHomePage()
+        {
+            if (driver.Url == baseURL)
+            {
+                return;
+            }
+            driver.FindElement(By.LinkText("home")).Click();
         }
     }
 }

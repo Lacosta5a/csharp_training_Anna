@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using static System.Net.WebRequestMethods;
+using OpenQA.Selenium.DevTools.V108.Audits;
 
 namespace WebAddressbookTests
 {
@@ -22,7 +24,7 @@ namespace WebAddressbookTests
             InitNewContactCreation();
             FillInContactData(contact);
             SubmitContactCreation();
-            ReturnToHomePage();
+            manager.Navigator.ReturnToHomePage();
             return this;
         }
         public ContactHelper Modify(int v, ContactData newData)
@@ -31,7 +33,7 @@ namespace WebAddressbookTests
             InitContactModification();
             FillInContactData(newData);
             SubmitContactModification();
-            ReturnToHomePage();
+            manager.Navigator.ReturnToHomePage();
             return this;
         }
         public ContactHelper Remove(int v)
@@ -43,6 +45,8 @@ namespace WebAddressbookTests
 
         public void CheckContactPresence()
         {
+            manager.Navigator.ReturnToHomePage();
+
             if (IsElementPresent(By.Name("selected[]")))
             {
                 return;
@@ -83,11 +87,7 @@ namespace WebAddressbookTests
         }
 
 
-        public ContactHelper ReturnToHomePage()
-        {
-            driver.FindElement(By.LinkText("home page")).Click();
-            return this;
-        }
+
 
         public ContactHelper SubmitContactCreation()
         {

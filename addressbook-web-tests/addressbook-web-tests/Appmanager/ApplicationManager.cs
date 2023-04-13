@@ -23,7 +23,7 @@ namespace WebAddressbookTests
 
         private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
 
-        private ApplicationManager ()
+        public ApplicationManager ()
         {
             driver = new FirefoxDriver();
             baseURL = "http://localhost:81/addressbook";
