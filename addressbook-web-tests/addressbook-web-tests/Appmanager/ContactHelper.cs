@@ -29,7 +29,6 @@ namespace WebAddressbookTests
         }
         public ContactHelper Modify(int v, ContactData newData)
         {
-            SelectRowWithContact();
             InitContactModification();
             FillInContactData(newData);
             SubmitContactModification();
@@ -38,7 +37,6 @@ namespace WebAddressbookTests
         }
         public ContactHelper Remove(int v)
         {
-            SelectRowWithContact();
             RemoveContact();
             return this;
         }
@@ -55,11 +53,6 @@ namespace WebAddressbookTests
             {
                 Create(new ContactData("aaa"));
             }
-        }
-        public ContactHelper SelectRowWithContact()
-        {
-            driver.FindElement(By.XPath("//*[@id='maintable']//tr[1]"));
-            return this;
         }
 
 
@@ -106,6 +99,18 @@ namespace WebAddressbookTests
         {
             driver.FindElement(By.LinkText("add new")).Click();
             return this;
-        } 
+        }
+
+        public List<ContactData> GetContactList()
+        {
+            List <ContactData> contacts = new List<ContactData>();
+            manager.Navigator.ReturnToHomePage();
+            ICollection<IWebElement> elements = driver.FindElements(By.Name("entry"));
+            foreach (IWebElement element in elements)
+            {
+                contacts.Add(new ContactData(element.Text));
+            }
+            return contacts;
+        }
     }
 }

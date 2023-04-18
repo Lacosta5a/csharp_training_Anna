@@ -114,6 +114,7 @@ namespace WebAddressbookTests
             return this;
         }
 
+
         public List<GroupData> GetGroupList()
         {
             List<GroupData> groups = new List<GroupData>();
