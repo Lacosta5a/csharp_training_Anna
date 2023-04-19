@@ -60,6 +60,7 @@ namespace WebAddressbookTests
         {
             driver.FindElement(By.XPath("//input[@name='selected[]']")).Click();
             driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
+            contactCache = null;
             driver.SwitchTo().Alert().Accept();
             driver.FindElement(By.LinkText("home")).Click();
             return this;
@@ -70,6 +71,7 @@ namespace WebAddressbookTests
         {
             driver.FindElement(By.XPath("//form[@action='edit.php']")).Click();
             driver.FindElement(By.XPath("//div[@id='content']/form/input[22]")).Click();
+            contactCache = null;
             return this;
         }
 
@@ -85,6 +87,7 @@ namespace WebAddressbookTests
         public ContactHelper SubmitContactCreation()
         {
             driver.FindElement(By.XPath("//input[21]")).Click();
+            contactCache = null;
             return this;
         }
 
@@ -101,17 +104,22 @@ namespace WebAddressbookTests
             return this;
         }
 
+        private List<ContactData> contactCache = null;
+
         public List<ContactData> GetContactList()
         {
-            List <ContactData> contacts = new List<ContactData>();
-            manager.Navigator.ReturnToHomePage();
-            ICollection<IWebElement> elements = driver.FindElements(By.Name("entry"));
-            foreach (IWebElement element in elements)
+            if (contactCache == null)
             {
-                IList<IWebElement> cells = element.FindElements(By.TagName("td"));
-                contacts.Add(new ContactData(cells[2].Text, cells[1].Text));
+                contactCache = new List<ContactData>();
+                manager.Navigator.ReturnToHomePage();
+                ICollection<IWebElement> elements = driver.FindElements(By.Name("entry"));
+                foreach (IWebElement element in elements)
+                {
+                    IList<IWebElement> cells = element.FindElements(By.TagName("td"));
+                    contactCache.Add(new ContactData(cells[2].Text, cells[1].Text));
+                }
             }
-            return contacts;
+            return new List<ContactData>(contactCache);
         }
     }
 }
