@@ -19,19 +19,16 @@ namespace WebAddressbookTests
 
         public bool Equals (ContactData other)
         {
-            if (Object.ReferenceEquals(other.Surname, null))
+            if (Object.ReferenceEquals(other, null))
             {
                 return false;
             }
-            if (Object.ReferenceEquals(other.Name, null))
-            {
-                return false;
-            }
-            if (Object.ReferenceEquals(this.Surname, other))
+           
+            if (Object.ReferenceEquals(Surname, other.Surname))
             {
                 return true;
             }
-            if (Object.ReferenceEquals(this.Name, other))
+            if (Object.ReferenceEquals(Name, other.Name))
             {
                 return true;
             }
@@ -50,15 +47,15 @@ namespace WebAddressbookTests
 
         public int CompareTo(ContactData other)
         {
-            if (Object.ReferenceEquals(other.Surname, null))
+            if (Object.ReferenceEquals(other.Surname, Surname))
             {
                 return 1;
             }
-            if (Object.ReferenceEquals(other.Name, null))
+            if (Object.ReferenceEquals(other.Name, Name))
             {
                 return 1;
             }
-            return Surname.CompareTo(other.Surname) + Name.CompareTo(other.Name);
+            return other.Surname.CompareTo(Surname) + other.Name.CompareTo(Name);
         }
 
         public ContactData(string name, string surname)
