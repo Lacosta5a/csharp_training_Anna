@@ -24,15 +24,7 @@ namespace WebAddressbookTests
                 return false;
             }
            
-            if (Object.ReferenceEquals(Surname, other.Surname))
-            {
-                return true;
-            }
-            if (Object.ReferenceEquals(Name, other.Name))
-            {
-                return true;
-            }
-            return Surname == other.Surname && Name == other.Name; 
+        return Surname == other.Surname && Name == other.Name; 
         }
 
         public override int GetHashCode()
@@ -47,15 +39,15 @@ namespace WebAddressbookTests
 
         public int CompareTo(ContactData other)
         {
-            if (Object.ReferenceEquals(other.Surname, Surname))
+            if (Object.ReferenceEquals(other, null))
             {
                 return 1;
-            }
-            if (Object.ReferenceEquals(other.Name, Name))
+            }   
+            if (other.Surname==Surname)
             {
-                return 1;
+                return other.Name.CompareTo(Name);   
             }
-            return other.Surname.CompareTo(Surname) + other.Name.CompareTo(Name);
+            return other.Surname.CompareTo(Surname);
         }
 
         public ContactData(string name, string surname)
