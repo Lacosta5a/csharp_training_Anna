@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,12 +10,10 @@ namespace WebAddressbookTests
 {
     public class ContactData : IEquatable<ContactData>, IComparable<ContactData>
     {
-        public string name;
-        public string surname = "";
 
         public ContactData (string name)
         {
-            this.name = name;
+            Name = name;
         }
 
         public bool Equals (ContactData other)
@@ -52,30 +51,72 @@ namespace WebAddressbookTests
 
         public ContactData(string name, string surname)
         {
-            this.name = name;
-            this.surname = surname;
+            Name = name;
+            Surname = surname;
         }
 
-        public string Name
-        {
-            get
+        public string Name {get; set;}
+
+        public string Surname { get; set; }
+
+        public string Address { get; set; }
+
+        public string HomePhone { get; set; }
+
+        public string MobilePhone { get; set; }
+
+        public string WorkPhone { get; set; }
+
+        public string Email { get; set; }
+
+        public string Email2 { get; set; }
+
+        public string Email3 { get; set; }
+
+        public string AllPhones
+        { 
+            get 
             {
-                return name;
-            }
-            set
+                if (AllPhones!=null) 
+                {
+                    return AllPhones;
+                }
+                else
+                {
+                    return CleanUpPhone(HomePhone) + CleanUpPhone(MobilePhone) + CleanUpPhone(WorkPhone);
+                }
+            } 
+            set 
             {
-                name = value;
-            }
+                AllPhones = value;
+            } 
         }
-        public string Surname
+
+        private string CleanUpPhone(string phone)
+        {
+            if (phone == null)
+            {
+                return "";
+            }
+            return phone.Replace(" ", "").Replace("-", "").Replace("(", "").Replace(")", "");
+        }
+
+        public string AllEmails
         {
             get
             {
-                return surname;
+                if (AllEmails != null)
+                {
+                    return AllEmails;
+                }
+                else
+                {
+                    return Email + Email2 + Email3;
+                }
             }
             set
             {
-                surname = value;
+                AllEmails = value;
             }
         }
     }
