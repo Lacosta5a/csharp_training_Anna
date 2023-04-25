@@ -5,11 +5,14 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace WebAddressbookTests
 {
     public class ContactData : IEquatable<ContactData>, IComparable<ContactData>
     {
+        private string allPhones;
+        private string allEmails;
 
         public ContactData (string name)
         {
@@ -77,47 +80,56 @@ namespace WebAddressbookTests
         { 
             get 
             {
-                if (AllPhones!=null) 
+                if (allPhones!=null) 
                 {
-                    return AllPhones;
+                    return allPhones;
                 }
                 else
                 {
-                    return CleanUpPhone(HomePhone) + CleanUpPhone(MobilePhone) + CleanUpPhone(WorkPhone);
+                    return (CleanUpPhone(HomePhone) + CleanUpPhone(MobilePhone) + CleanUpPhone(WorkPhone)).Trim(); ;
                 }
             } 
             set 
             {
-                AllPhones = value;
+                allPhones = value;
             } 
         }
 
         private string CleanUpPhone(string phone)
         {
-            if (phone == null)
+            if (phone == null || phone=="")
             {
                 return "";
             }
-            return phone.Replace(" ", "").Replace("-", "").Replace("(", "").Replace(")", "");
+            return Regex.Replace(phone,"[ -()]","") +"\r\n";
         }
 
         public string AllEmails
         {
             get
             {
-                if (AllEmails != null)
+                if (allEmails != null)
                 {
-                    return AllEmails;
+                    return allEmails;
                 }
                 else
                 {
-                    return Email + Email2 + Email3;
+                    return (CleanUpEmail(Email) + CleanUpEmail(Email2) + CleanUpEmail (Email3)).Trim();
                 }
             }
             set
             {
-                AllEmails = value;
+                allEmails = value;
             }
+        }
+
+        private string CleanUpEmail(string emails)
+        {
+            if (emails == null || emails == "")
+            {
+                return "";
+            }
+            return emails + "\r\n";
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using static System.Net.WebRequestMethods;
 using OpenQA.Selenium.DevTools.V108.Audits;
 
+
 namespace WebAddressbookTests
 {
     public class ContactHelper : HelperBase
@@ -170,6 +171,15 @@ namespace WebAddressbookTests
                 Email2 = email2,
                 Email3 = email3
             };
+        }
+
+        public int GetNumberOfSearchResults()
+        {
+            manager.Navigator.GoToHomePage();
+
+            string text = driver.FindElement(By.TagName("label")).Text;
+            Match m=new Regex(@"\d+").Match(text);
+            return Int32.Parse(m.Value);
         }
     }
 }
