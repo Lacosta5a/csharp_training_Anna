@@ -167,6 +167,7 @@ namespace WebAddressbookTests
                 Address = address,
                 HomePhone = homePhone,
                 MobilePhone = mobilePhone,
+                WorkPhone = workPhone,
                 Email = email,
                 Email2 = email2,
                 Email3 = email3
