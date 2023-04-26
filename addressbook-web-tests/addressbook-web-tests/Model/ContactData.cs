@@ -13,6 +13,7 @@ namespace WebAddressbookTests
     {
         private string allPhones;
         private string allEmails;
+        private string allData;
 
         public ContactData (string name)
         {
@@ -95,13 +96,13 @@ namespace WebAddressbookTests
             } 
         }
 
-        private string CleanUpPhone(string phone)
+        public string CleanUpPhone(string phone)
         {
             if (phone == null || phone=="")
             {
                 return "";
             }
-            return Regex.Replace(phone,"[ -()]","") +"\r\n";
+            return Regex.Replace(phone,"[ ","") +"\r\n";
         }
 
         public string AllEmails
@@ -123,13 +124,42 @@ namespace WebAddressbookTests
             }
         }
 
-        private string CleanUpEmail(string emails)
+        public string CleanUpEmail(string emails)
         {
             if (emails == null || emails == "")
             {
                 return "";
             }
             return emails + "\r\n";
+        }
+
+        public string AllData
+        {
+            get
+            {
+                if (allData != null)
+                {
+                    return CleanUpData(allData);
+                }
+                else
+                {
+                    return Name + Surname + Address+ "H:" +HomePhone + "M:"+ MobilePhone + "W:"+WorkPhone
+                        + CleanUpEmail(Email) + CleanUpEmail(Email2) + CleanUpEmail(Email3).Trim();
+                }
+            }
+            set
+            {
+                allData = value;
+            }
+        }
+
+        public string CleanUpData(string allData)
+        {
+            if (allData == null || allData == "")
+            {
+                return "";
+            }
+            return Regex.Replace(allData, "\r\n", "") ;
         }
     }
 }

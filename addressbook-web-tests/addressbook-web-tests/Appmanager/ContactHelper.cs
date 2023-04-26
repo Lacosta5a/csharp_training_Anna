@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using static System.Net.WebRequestMethods;
 using OpenQA.Selenium.DevTools.V108.Audits;
-
+using OpenQA.Selenium.DevTools.V109.CSS;
 
 namespace WebAddressbookTests
 {
@@ -108,7 +108,6 @@ namespace WebAddressbookTests
 
         private List<ContactData> contactCache = null;
 
-
         public List<ContactData> GetContactList()
         {
             if (contactCache == null)
@@ -181,6 +180,20 @@ namespace WebAddressbookTests
             string text = driver.FindElement(By.TagName("label")).Text;
             Match m=new Regex(@"\d+").Match(text);
             return Int32.Parse(m.Value);
+        }
+
+        public ContactData GetContactInformationFromCard(int index)
+        {
+            manager.Navigator.GoToHomePage();
+            driver.FindElements(By.Name("entry"))[index]
+                .FindElements(By.TagName("td"))[6]
+                .FindElement(By.TagName("a")).Click();
+            string text = driver.FindElement(By.XPath("//div[@id='content']")).Text;
+            return new ContactData(text)
+            {
+                AllData = text,
+            };
+            
         }
     }
 }
