@@ -143,7 +143,8 @@ namespace WebAddressbookTests
                 }
                 else
                 {
-                    return Name + " "+Surname + Address+ "H: " +HomePhone + "M: "+ MobilePhone + "W: "+WorkPhone
+                    return Name +Surname + Address+ TransformHomePhone(HomePhone) + TransformMobilePhone(MobilePhone) 
+                        + TransformWorkPhone(WorkPhone)
                         + Email +Email2 + Email3.Trim();
                 }
             }
@@ -153,13 +154,42 @@ namespace WebAddressbookTests
             }
         }
 
+
+
+        private string TransformWorkPhone(string workPhone)
+        {
+            if (workPhone == null || workPhone == "")
+            {
+                return "";
+            }
+            return Regex.Replace(workPhone, workPhone, "W: " + workPhone);
+        }
+
+        private string TransformMobilePhone(string mobilePhone)
+        {
+            if (mobilePhone == null || mobilePhone == "")
+            {
+                return "";
+            }
+            return Regex.Replace(mobilePhone, mobilePhone, "M: " + mobilePhone);
+        }
+
+        private string TransformHomePhone(string homePhone)
+        {
+            if (homePhone == null || homePhone == "")
+            {
+                return "";
+            }
+            return Regex.Replace(homePhone, homePhone, "H: "+homePhone);
+        }
+
         public string CleanUpData(string allData)
         {
             if (allData == null || allData == "")
             {
                 return "";
             }
-            return Regex.Replace(allData, "\r\n", "") ;
+            return Regex.Replace(allData, "\r\n", "");
         }
     }
 }
