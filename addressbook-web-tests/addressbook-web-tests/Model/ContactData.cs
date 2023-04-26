@@ -143,7 +143,7 @@ namespace WebAddressbookTests
                 }
                 else
                 {
-                    return Name + Surname + Address+ "H:" +HomePhone + "M:"+ MobilePhone + "W:"+WorkPhone
+                    return Name +" " +Surname + Address+ "H:" +HomePhone + "M:"+ MobilePhone + "W:"+WorkPhone
                         + CleanUpEmail(Email) + CleanUpEmail(Email2) + CleanUpEmail(Email3).Trim();
                 }
             }
