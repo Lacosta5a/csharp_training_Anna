@@ -27,10 +27,6 @@ namespace WebAddressbookTests
             return groups;
         }
 
-        public static string GenerateRandomString(int v)
-        {
-            throw new NotImplementedException();
-        }
 
         [Test,TestCaseSource("RandomGroupDataProvider")]
         public void GroupCreationTest(GroupData group)

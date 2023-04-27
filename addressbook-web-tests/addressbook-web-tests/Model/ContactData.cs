@@ -6,6 +6,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Net;
 
 namespace WebAddressbookTests
 {
@@ -14,6 +15,9 @@ namespace WebAddressbookTests
         private string allPhones;
         private string allEmails;
         private string allData;
+        private string nameSurnameAddress;
+        private string homeMobileWorkPhones;
+        private string emailEmail2Email3;
 
         public ContactData (string name)
         {
@@ -76,6 +80,56 @@ namespace WebAddressbookTests
         public string Email2 { get; set; }
 
         public string Email3 { get; set; }
+        public string NameSurnameAddress
+        {
+            get
+            {
+                if (nameSurnameAddress != null)
+                {
+                    return nameSurnameAddress;
+                }
+                if (Name == null|| Name=="")
+                {
+                    return Surname + "\r\n" + Address.Trim();
+                }
+                if (Surname == null || Surname == "")
+                {
+                    return Name+ "\r\n" + Address.Trim();
+                }
+                if (Address == null || Address == "")
+                {
+                    return Name + " " + Surname + "\r\n";
+                }
+                else
+                {
+                    return Name+" "+Surname+ "\r\n" + Address.Trim(); 
+                }
+            }
+            set
+            {
+                nameSurnameAddress = value;
+            }
+        }
+        public string HomeMobileWorkPhones
+        {
+            get
+            {
+                if (homeMobileWorkPhones != null)
+                {
+                    return homeMobileWorkPhones;
+                }
+                else
+                {
+                    return "H: "+HomePhone + "\r\n"+"M: " +MobilePhone + "\r\n"+ "W: " +WorkPhone.Trim(); ;
+                }
+            }
+            set
+            {
+                homeMobileWorkPhones = value;
+            }
+        }
+
+
 
         public string AllPhones
         { 
@@ -139,13 +193,12 @@ namespace WebAddressbookTests
             {
                 if (allData != null)
                 {
-                    return CleanUpData(allData);
+                    return allData;
                 }
                 else
                 {
-                    return Name +Surname + Address+ TransformHomePhone(HomePhone) + TransformMobilePhone(MobilePhone) 
-                        + TransformWorkPhone(WorkPhone)
-                        + Email +Email2 + Email3.Trim();
+                    return CleanUpNameSurnameAddress(NameSurnameAddress) + CleanUpAllPhones(HomeMobileWorkPhones)                         
+                        + CleanUpAll3Email(AllEmails);
                 }
             }
             set
@@ -154,42 +207,33 @@ namespace WebAddressbookTests
             }
         }
 
-
-
-        private string TransformWorkPhone(string workPhone)
+        private object CleanUpAll3Email(string allEmails)
         {
-            if (workPhone == null || workPhone == "")
             {
-                return "";
+                if (allEmails == null || allEmails == "")
+                {
+                    return "";
+                }
+                return "\r\n\r\n"+AllEmails;
             }
-            return Regex.Replace(workPhone, workPhone, "W: " + workPhone);
         }
 
-        private string TransformMobilePhone(string mobilePhone)
+        private string CleanUpAllPhones(string homeMobileWorkPhones)
         {
-            if (mobilePhone == null || mobilePhone == "")
+            if (homeMobileWorkPhones == null || homeMobileWorkPhones == "")
             {
                 return "";
             }
-            return Regex.Replace(mobilePhone, mobilePhone, "M: " + mobilePhone);
+            return homeMobileWorkPhones;
         }
 
-        private string TransformHomePhone(string homePhone)
+        private string CleanUpNameSurnameAddress(string nameSurnameAddress)
         {
-            if (homePhone == null || homePhone == "")
+            if (nameSurnameAddress == null || nameSurnameAddress == "")
             {
                 return "";
             }
-            return Regex.Replace(homePhone, homePhone, "H: "+homePhone);
-        }
-
-        public string CleanUpData(string allData)
-        {
-            if (allData == null || allData == "")
-            {
-                return "";
-            }
-            return Regex.Replace(allData, "\r\n", "");
+            return nameSurnameAddress + "\r\n\r\n";
         }
     }
 }
