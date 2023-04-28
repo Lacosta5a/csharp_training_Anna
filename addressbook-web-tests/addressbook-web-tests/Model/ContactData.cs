@@ -88,21 +88,9 @@ namespace WebAddressbookTests
                 {
                     return nameSurnameAddress;
                 }
-                if (Name == null|| Name=="")
-                {
-                    return Surname + "\r\n" + Address.Trim();
-                }
-                if (Surname == null || Surname == "")
-                {
-                    return Name+ "\r\n" + Address.Trim();
-                }
-                if (Address == null || Address == "")
-                {
-                    return Name + " " + Surname + "\r\n";
-                }
                 else
                 {
-                    return Name+" "+Surname+ "\r\n" + Address.Trim(); 
+                    return Name + CheckIfSpaceNeeded(" ")+ Surname +CheckIfNewLineNeeded("\r\n")+  Address.Trim();
                 }
             }
             set
@@ -110,6 +98,31 @@ namespace WebAddressbookTests
                 nameSurnameAddress = value;
             }
         }
+
+        private string CheckIfNewLineNeeded(string v)
+        {
+            if (Name != null|| Name !=""||Surname!=null||Surname!="")
+            {
+                return "\r\n";
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private string CheckIfSpaceNeeded(string v)
+        {
+            if (Name != null || Surname != null || Name != "" || Surname != "")
+            {
+                return null;
+            }
+            else
+            {
+                return " ";
+            }
+        }
+
         public string HomeMobileWorkPhones
         {
             get
@@ -118,10 +131,11 @@ namespace WebAddressbookTests
                 {
                     return homeMobileWorkPhones;
                 }
-                else
+             else 
                 {
-                    return "H: "+HomePhone + "\r\n"+"M: " +MobilePhone + "\r\n"+ "W: " +WorkPhone.Trim(); ;
-                }
+                    return AddedH(HomePhone)+ AddedM(MobilePhone) + AddedW(WorkPhone);
+                }              
+            
             }
             set
             {
@@ -129,7 +143,32 @@ namespace WebAddressbookTests
             }
         }
 
+        private string AddedH(string homePhone)
+        {
+            if (homePhone == null || homePhone == "")
+            {
+                return "";
+            }
+            return "H: "+HomePhone;
+        }
 
+        private string AddedM(string mobilePhone)
+        {
+            if (mobilePhone == null || mobilePhone == "")
+            {
+                return "";
+            }
+            return "M: " + MobilePhone;
+        }
+
+        private string AddedW(string workPhone)
+        {
+            if (workPhone == null || workPhone == "")
+            {
+                return "";
+            }
+            return "W: " + WorkPhone;
+        }
 
         public string AllPhones
         { 
@@ -213,8 +252,8 @@ namespace WebAddressbookTests
                 if (allEmails == null || allEmails == "")
                 {
                     return "";
-                }
-                return "\r\n\r\n"+AllEmails;
+                }              
+                    return "\r\n\r\n" + AllEmails;               
             }
         }
 
@@ -224,7 +263,14 @@ namespace WebAddressbookTests
             {
                 return "";
             }
-            return homeMobileWorkPhones;
+            if(NameSurnameAddress!=null|| NameSurnameAddress != "")
+            {
+                return "\r\n"+ homeMobileWorkPhones;
+            }
+            else
+            {
+                return "\r\n\r\n" + homeMobileWorkPhones;
+            }
         }
 
         private string CleanUpNameSurnameAddress(string nameSurnameAddress)
@@ -233,7 +279,7 @@ namespace WebAddressbookTests
             {
                 return "";
             }
-            return nameSurnameAddress + "\r\n\r\n";
+            return nameSurnameAddress;
         }
     }
 }
