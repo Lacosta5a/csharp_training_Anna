@@ -22,11 +22,12 @@ namespace addressbook_test_data_generators
             int count = Convert.ToInt32(args[0]);
             string filename = args[1];
             string format = args[2];
+            string type = args[3];
             List<GroupData> groups = new List<GroupData>();
             List<ContactData> contacts = new List<ContactData>();
             for (int i = 0; i < count; i++)
             {
-                if (args[1] == "groups")
+                if (type == "G")
                 {
                     groups.Add(new GroupData(TestBase.GenerateRandomString(10))
                     {
@@ -34,11 +35,12 @@ namespace addressbook_test_data_generators
                         Footer = TestBase.GenerateRandomString(10)
                     });
                 }
-                if (args[1] == "contacts")
+                if (type == "C")
                 {
                     contacts.Add(new ContactData(TestBase.GenerateRandomString(10))
                     {
                         Surname = TestBase.GenerateRandomString(10),
+                        Address= TestBase.GenerateRandomString(10),
                     });
 
                 }
@@ -58,7 +60,7 @@ namespace addressbook_test_data_generators
                 }
                 else if (format == "xml")
                 {
-                    if (args[1] == "groups")
+                    if (type=="G")
                     {
                         writeGroupsToXmlFile(groups, writer);
                     }

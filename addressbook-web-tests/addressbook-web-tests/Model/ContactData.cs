@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Net;
+using System.Xml.Serialization;
 
 namespace WebAddressbookTests
 {
@@ -16,6 +17,7 @@ namespace WebAddressbookTests
         {
         }
 
+      
         private string allPhones;
         private string allEmails;
         private string allData;
@@ -72,17 +74,25 @@ namespace WebAddressbookTests
 
         public string Address { get; set; }
 
+        [XmlIgnore]
         public string HomePhone { get; set; }
 
+        [XmlIgnore]
         public string MobilePhone { get; set; }
 
+        [XmlIgnore]
         public string WorkPhone { get; set; }
 
+        [XmlIgnore]
         public string Email { get; set; }
 
+        [XmlIgnore]
         public string Email2 { get; set; }
 
+        [XmlIgnore]
         public string Email3 { get; set; }
+
+        [XmlIgnore]
         public string NameSurnameAddress
         {
             get
@@ -126,6 +136,7 @@ namespace WebAddressbookTests
             }
         }
 
+        [XmlIgnore]
         public string HomeMobileWorkPhones
         {
             get
@@ -173,6 +184,7 @@ namespace WebAddressbookTests
             return "W: " + WorkPhone;
         }
 
+        [XmlIgnore]
         public string AllPhones
         { 
             get 
@@ -201,6 +213,7 @@ namespace WebAddressbookTests
             return Regex.Replace(phone,"[ -()]","") +"\r\n";
         }
 
+        [XmlIgnore]
         public string AllEmails
         {
             get
@@ -229,6 +242,7 @@ namespace WebAddressbookTests
             return emails + "\r\n";
         }
 
+        [XmlIgnore]
         public string AllData
         {
             get
