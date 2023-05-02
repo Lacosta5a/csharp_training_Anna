@@ -22,7 +22,6 @@ namespace addressbook_test_data_generators
             int count = Convert.ToInt32(args[0]);
             string filename = args[1];
             string format = args[2];
-
             List<GroupData> groups = new List<GroupData>();
             List<ContactData> contacts = new List<ContactData>();
             for (int i = 0; i < count; i++)
@@ -45,7 +44,6 @@ namespace addressbook_test_data_generators
                 }
 
             }
-          
 
             if (format == "excel")
             {
@@ -60,8 +58,11 @@ namespace addressbook_test_data_generators
                 }
                 else if (format == "xml")
                 {
-                    writeGroupsToXmlFile(groups, writer);
-                    writeContactsToXmlFile(contacts, writer);
+                    if (args[1] == "groups")
+                    {
+                        writeGroupsToXmlFile(groups, writer);
+                    }
+                    else writeContactsToXmlFile(contacts, writer);
                 }
                 else if (format == "json")
                 {
