@@ -24,14 +24,29 @@ namespace addressbook_test_data_generators
             string format = args[2];
 
             List<GroupData> groups = new List<GroupData>();
-            for (int i = 0;i<count; i++)
+            List<ContactData> contacts = new List<ContactData>();
+            for (int i = 0; i < count; i++)
             {
-                groups.Add(new GroupData(TestBase.GenerateRandomString(10))
+                if (args[1] == "groups")
                 {
-                    Header = TestBase.GenerateRandomString(10),
-                    Footer = TestBase.GenerateRandomString(10)
-                });
+                    groups.Add(new GroupData(TestBase.GenerateRandomString(10))
+                    {
+                        Header = TestBase.GenerateRandomString(10),
+                        Footer = TestBase.GenerateRandomString(10)
+                    });
+                }
+                if (args[1] == "contacts")
+                {
+                    contacts.Add(new ContactData(TestBase.GenerateRandomString(10))
+                    {
+                        Surname = TestBase.GenerateRandomString(10),
+                    });
+
+                }
+
             }
+          
+
             if (format == "excel")
             {
                 writeGroupsToExcelFile(groups, filename);
@@ -46,6 +61,7 @@ namespace addressbook_test_data_generators
                 else if (format == "xml")
                 {
                     writeGroupsToXmlFile(groups, writer);
+                    writeContactsToXmlFile(contacts, writer);
                 }
                 else if (format == "json")
                 {
@@ -56,19 +72,24 @@ namespace addressbook_test_data_generators
                     System.Console.Out.Write("Unrecognized format" + format);
                 }
                 writer.Close();
-            }
+            }            
+        }
+
+        private static void writeContactsToXmlFile(List<ContactData>contacts, StreamWriter writer)
+        {
+            new XmlSerializer(typeof(List<ContactData>)).Serialize(writer, contacts);
         }
 
         static void writeGroupsToExcelFile(List<GroupData> groups, string filename)
         {
             Excel.Application app = new Excel.Application();
             app.Visible = true;
-            Excel.Workbook wb= app.Workbooks.Add();
+            Excel.Workbook wb = app.Workbooks.Add();
             Excel.Worksheet sheet = wb.ActiveSheet;
             sheet.Cells[1, 1] = "test";
 
             int row = 1;
-            foreach(GroupData group in groups)
+            foreach (GroupData group in groups)
             {
                 sheet.Cells[row, 1] = group.Name;
                 sheet.Cells[row, 2] = group.Header;
@@ -85,7 +106,7 @@ namespace addressbook_test_data_generators
 
         static void writeGroupsToCsvFile(List<GroupData> groups, StreamWriter writer)
         {
-            foreach(GroupData group in groups)
+            foreach (GroupData group in groups)
             {
                 writer.WriteLine(String.Format("${0},${1},${2}",
                     group.Name, group.Header, group.Footer));
@@ -102,4 +123,4 @@ namespace addressbook_test_data_generators
             writer.Write(JsonConvert.SerializeObject(groups, Newtonsoft.Json.Formatting.Indented));
         }
     }
-}
+} 

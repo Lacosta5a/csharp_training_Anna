@@ -12,12 +12,15 @@ namespace WebAddressbookTests
 {
     public class ContactData : IEquatable<ContactData>, IComparable<ContactData>
     {
+        public ContactData()
+        {
+        }
+
         private string allPhones;
         private string allEmails;
         private string allData;
         private string nameSurnameAddress;
         private string homeMobileWorkPhones;
-        private string emailEmail2Email3;
 
         public ContactData (string name)
         {
