@@ -62,6 +62,16 @@ namespace WebAddressbookTests
             return this;
         }
 
+        public GroupHelper Remove(GroupData group)
+        {
+            manager.Navigator.GoToGroupsPage();
+
+            SelectGroup(group.Id);
+            RemoveGroup();
+            ReturnToGroupsPage();
+            return this;
+        }
+
         public void CheckGroupPresence()
         {
             manager.Navigator.GoToGroupsPage();
@@ -76,12 +86,17 @@ namespace WebAddressbookTests
             }
         }
 
-        public GroupHelper SelectGroup(int index)
+        public GroupHelper SelectGroup(string id)
         {
-            driver.FindElement(By.XPath("//div[@id='content']/form/span[" + (index+1) + "]/input")).Click();
+            driver.FindElement(By.XPath("(//input[@name='selected[]' and @value='"+id+"'])")).Click();
             return this;
         }
 
+        public GroupHelper SelectGroup(int index)
+        {
+            driver.FindElement(By.XPath("//div[@id='content']/form/span[" + (index + 1) + "]/input")).Click();
+            return this;
+        }
 
         public GroupHelper SubmitGroupCreation()
         {
@@ -141,6 +156,6 @@ namespace WebAddressbookTests
         public int GetGroupCount()
         {
             return driver.FindElements(By.CssSelector("span.group")).Count;
-        }
+        } 
     }
 }
