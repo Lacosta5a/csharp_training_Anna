@@ -139,7 +139,7 @@ namespace WebAddressbookTests
                         }
                     }
                 }
-                return null;
+                return "\r\n";
             }
         }
 
