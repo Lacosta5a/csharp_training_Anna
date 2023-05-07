@@ -9,9 +9,11 @@ using System.Text.RegularExpressions;
 using System.Net;
 using System.Xml.Serialization;
 using System.Diagnostics.Eventing.Reader;
+using LinqToDB.Mapping;
 
 namespace WebAddressbookTests
 {
+    [Table(Name ="addressbook")]
     public class ContactData : IEquatable<ContactData>, IComparable<ContactData>
     {
         public ContactData()
@@ -69,8 +71,14 @@ namespace WebAddressbookTests
             Surname = surname;
         }
 
+        [Column(Name = "id"), PrimaryKey]
+        public string Id { get; set; }
+
+
+        [Column(Name="firstname")]
         public string Name {get; set;}
 
+        [Column(Name = "lastname")]
         public string Surname { get; set; }
 
         public string Address { get; set; }
