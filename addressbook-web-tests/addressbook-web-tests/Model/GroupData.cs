@@ -77,7 +77,7 @@ namespace WebAddressbookTests
             {
                 return (from c in db.Contacts
                         from gcr in db.GCR.Where(p=>p.GroupId==Id&&p.ContactId==Id)
-                        select c).ToList();
+                        select c).Distinct().ToList();
             }
         }
     }
