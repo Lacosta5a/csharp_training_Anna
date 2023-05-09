@@ -81,24 +81,31 @@ namespace WebAddressbookTests
         [Column(Name = "lastname")]
         public string Surname { get; set; }
 
+        [Column(Name = "address")]
         public string Address { get; set; }
 
         [XmlIgnore]
+        [Column(Name = "home")]
         public string HomePhone { get; set; }
 
         [XmlIgnore]
+        [Column(Name = "mobile")]
         public string MobilePhone { get; set; }
 
         [XmlIgnore]
+        [Column(Name = "work")]
         public string WorkPhone { get; set; }
 
         [XmlIgnore]
+        [Column(Name = "email")]
         public string Email { get; set; }
 
         [XmlIgnore]
+        [Column(Name = "email2")]
         public string Email2 { get; set; }
 
         [XmlIgnore]
+        [Column(Name = "email3")]
         public string Email3 { get; set; }
 
         [Column(Name="deprecated")]

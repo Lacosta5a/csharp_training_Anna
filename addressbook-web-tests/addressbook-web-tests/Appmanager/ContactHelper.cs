@@ -68,6 +68,22 @@ namespace WebAddressbookTests
             return this;
         }
 
+        public ContactHelper Remove(ContactData contact)
+        {
+            RemoveContact(contact.Id);
+            return this;
+        }
+
+        public ContactHelper RemoveContact(string id)
+        {
+            driver.FindElement(By.XPath("//input[@name='selected[]'and @id]")).Click();
+            driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
+            contactCache = null;
+            driver.SwitchTo().Alert().Accept();
+            driver.FindElement(By.LinkText("home")).Click();
+            return this;
+        }
+
 
         public ContactHelper SubmitContactModification()
         {

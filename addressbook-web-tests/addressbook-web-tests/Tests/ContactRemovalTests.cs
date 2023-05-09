@@ -19,11 +19,12 @@ namespace WebAddressbookTests
         {
             app.Contact.CheckContactPresence();
 
-            List<ContactData> oldContacts = app.Contact.GetContactList();
+            List<ContactData> oldContacts = ContactData.GetAll();
+            ContactData toBeRemoved = oldContacts[0];
 
-            app.Contact.Remove(0);
+            app.Contact.Remove(toBeRemoved);
 
-            List<ContactData> newContacts = app.Contact.GetContactList();
+            List<ContactData> newContacts = ContactData.GetAll();
 
             oldContacts.RemoveAt(0);
             oldContacts.Sort();
