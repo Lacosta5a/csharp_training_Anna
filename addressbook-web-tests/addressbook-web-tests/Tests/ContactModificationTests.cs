@@ -18,13 +18,14 @@ namespace WebAddressbookTests
         public void ContactModificationTest()
         {
             ContactData newData = new ContactData("Junior1", "Anna1");
-            List<ContactData> oldContacts = app.Contact.GetContactList();
+            List<ContactData> oldContacts = ContactData.GetAll();
+            ContactData toBeModified = oldContacts[0];
 
             app.Contact.CheckContactPresence();
 
-            app.Contact.Modify(0, newData);
+            app.Contact.Modify(toBeModified, newData);
 
-            List<ContactData> newContacts = app.Contact.GetContactList();
+            List<ContactData> newContacts = ContactData.GetAll();
 
             oldContacts[0].Name = newData.Name;
             oldContacts[0].Surname = newData.Surname;

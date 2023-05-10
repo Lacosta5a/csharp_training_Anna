@@ -76,7 +76,7 @@ namespace WebAddressbookTests
 
         public ContactHelper RemoveContact(string id)
         {
-            driver.FindElement(By.XPath("//input[@name='selected[]'and @value='" + id + "'])")).Click();
+            driver.FindElement(By.XPath("//input[@name='selected[]'and @value='" + id + "']")).Click();
             driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
             contactCache = null;
             driver.SwitchTo().Alert().Accept();
