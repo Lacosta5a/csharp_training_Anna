@@ -50,8 +50,8 @@ namespace WebAddressbookTests
         public void InitContactModification(string id)
         {
             driver.FindElement(By.XPath("//input[@name='selected[]'and @value='" + id + "']"))
-                .FindElements(By.Name("entry"))
-                .FindElements(By.TagName("td[7]"))
+                .FindElement(By.XPath("./../.."))
+                .FindElements(By.TagName("td"))[7]
                 .FindElement(By.TagName("a")).Click();
         }
 

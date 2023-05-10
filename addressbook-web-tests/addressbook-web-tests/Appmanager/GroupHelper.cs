@@ -47,7 +47,18 @@ namespace WebAddressbookTests
             return this;
 
         }
-       
+
+        public GroupHelper Modify(GroupData group, GroupData newData)
+        {
+            SelectGroup(group.Id);
+            InitGroupModification();
+            FillGroupForm(newData);
+            SubmitGroupModification();
+            ReturnToGroupsPage();
+
+            return this;
+        }
+
 
         public GroupHelper ReturnToGroupsPage()
         {
@@ -156,6 +167,6 @@ namespace WebAddressbookTests
         public int GetGroupCount()
         {
             return driver.FindElements(By.CssSelector("span.group")).Count;
-        } 
+        }
     }
 }
