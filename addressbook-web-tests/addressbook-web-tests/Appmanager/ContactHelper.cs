@@ -231,7 +231,7 @@ namespace WebAddressbookTests
             
         }
 
-        internal void AddContactToGroup(ContactData contact, GroupData group)
+        public void AddContactToGroup(ContactData contact, GroupData group)
         {
             manager.Navigator.GoToHomePage();
             ClearGroupFilter();
@@ -260,6 +260,39 @@ namespace WebAddressbookTests
         public void ClearGroupFilter()
         {
             new SelectElement(driver.FindElement(By.Name("group"))).SelectByText("[all]");
+        }
+
+        public void RemoveContactFromGroup(ContactData contact, GroupData group)
+        {
+            manager.Navigator.GoToHomePage();
+            
+            SelectGroupInFilter(group.Id);
+            SelectContact(contact.Id);
+            RemoveContactFromGroup();
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10))
+                .Until(d => d.FindElements(By.CssSelector("div.msgbox")).Count > 0);
+        }
+
+        private void RemoveContactFromGroup()
+        {
+            driver.FindElement(By.Name("remove")).Click();
+        }
+
+        public void SelectGroupInFilter(string id)
+        {
+            new SelectElement(driver.FindElement(By.Name("group"))).SelectByValue("@value='"+id+"'");
+        }
+
+        public void CheckIfContactBelongsToGroup(ContactData contact, GroupData group)
+        {
+            if (group.GetContacts().Count==0)
+            {
+                AddContactToGroup(contact,group);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
