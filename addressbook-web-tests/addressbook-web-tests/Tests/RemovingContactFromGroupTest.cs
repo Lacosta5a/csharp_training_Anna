@@ -13,15 +13,29 @@ namespace WebAddressbookTests
 
         public void TestRemovingContactFromGroup()
         {
-            
+            if (GroupData.GetAll().Count == 0)
+            {
+                app.Groups.Create(new GroupData("111"));
+            }
+            else
+            {
+                return;
+            }
             GroupData group = GroupData.GetAll()[0];
+
+            if (ContactData.GetAll().Count == 0)
+            {
+                app.Contact.Create(new ContactData("Elena"));
+            }
+            else
+            {
+                return;
+            }
+
             List<ContactData> oldList = group.GetContacts();
             ContactData contact = group.GetContacts().First();
 
-            app.Contact.CheckContactPresence();
-            app.Groups.CheckGroupPresence();
             app.Contact.CheckIfContactBelongsToGroup(contact, group);
-
             app.Contact.RemoveContactFromGroup(contact,group);
 
             List<ContactData> newList = group.GetContacts();

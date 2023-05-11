@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
@@ -12,26 +13,28 @@ namespace WebAddressbookTests
         [Test]
         public void TestAddingContactToGroup()
         {
+            if (GroupData.GetAll().Count == 0)
+            {
+                app.Groups.Create(new GroupData("111"));
+            }
+            else
+            {
+                return;
+            }
             GroupData group = GroupData.GetAll()[0];
-            List<ContactData> oldList = group.GetContacts();
-            ContactData contact = ContactData.GetAll().Except(oldList).First();
 
             if (ContactData.GetAll().Count == 0)
             {
-                app.Contact.Create(contact);
+                app.Contact.Create(new ContactData("Elena"));
             }
             else
             {
                 return;
             }
-            if (GroupData.GetAll().Count == 0)
-            {
-                app.Groups.Create(group);
-            }
-            else
-            {
-                return;
-            }
+            List<ContactData> oldList = group.GetContacts();
+            ContactData contact = ContactData.GetAll().Except(oldList).First();
+           
+
             app.Contact.AddContactToGroup(contact,group);
 
             List<ContactData> newList = group.GetContacts();
