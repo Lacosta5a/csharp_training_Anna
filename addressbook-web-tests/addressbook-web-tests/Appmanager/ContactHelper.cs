@@ -291,10 +291,6 @@ namespace WebAddressbookTests
             {
                 AddContactToGroup(contact,group);
             }
-            else
-            {
-                return;
-            }
         }
     }
 }

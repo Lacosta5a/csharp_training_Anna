@@ -17,20 +17,13 @@ namespace WebAddressbookTests
             {
                 app.Groups.Create(new GroupData("111"));
             }
-            else
-            {
-                return;
-            }
             GroupData group = GroupData.GetAll()[0];
 
             if (ContactData.GetAll().Count == 0)
             {
                 app.Contact.Create(new ContactData("Elena"));
             }
-            else
-            {
-                return;
-            }
+
             List<ContactData> oldList = group.GetContacts();
             ContactData contact = ContactData.GetAll().Except(oldList).First();
            
