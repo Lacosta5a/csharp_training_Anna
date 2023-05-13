@@ -266,7 +266,7 @@ namespace WebAddressbookTests
         {
             manager.Navigator.GoToHomePage();
             
-            SelectGroupInFilter();
+            SelectGroupInFilter(group.Id);
             SelectContact(contact.Id);
             RemoveContactFromGroup();
             new WebDriverWait(driver, TimeSpan.FromSeconds(10))
@@ -278,10 +278,10 @@ namespace WebAddressbookTests
             driver.FindElement(By.Name("remove")).Click();
         }
 
-        public void SelectGroupInFilter()
+        public void SelectGroupInFilter(string id)
         {
             driver.FindElement(By.Name("group")).Click();
-            new SelectElement(driver.FindElement(By.Name("group"))).SelectByText("111");
+            new SelectElement(driver.FindElement(By.Name("group"))).SelectByValue("@value = '" + id + "'");
 
         }
 
