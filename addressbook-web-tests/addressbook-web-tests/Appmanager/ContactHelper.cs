@@ -11,6 +11,7 @@ using static System.Net.WebRequestMethods;
 using OpenQA.Selenium.DevTools.V108.Audits;
 using OpenQA.Selenium.DevTools.V109.CSS;
 using OpenQA.Selenium.Support.UI;
+using System.Reflection;
 
 namespace WebAddressbookTests
 {
@@ -265,8 +266,9 @@ namespace WebAddressbookTests
         public void RemoveContactFromGroup(ContactData contact, GroupData group)
         {
             manager.Navigator.GoToHomePage();
-            
-            SelectGroupInFilter(group.Id);
+
+            ClearGroupFilter();
+            SelectGroupInFilter(3);
             SelectContact(contact.Id);
             RemoveContactFromGroup();
             new WebDriverWait(driver, TimeSpan.FromSeconds(10))
@@ -278,10 +280,10 @@ namespace WebAddressbookTests
             driver.FindElement(By.Name("remove")).Click();
         }
 
-        public void SelectGroupInFilter(string id)
+        public void SelectGroupInFilter(int index)
         {
             driver.FindElement(By.Name("group")).Click();
-            new SelectElement(driver.FindElement(By.Name("group"))).SelectByValue("@value = '" + id + "'");
+            new SelectElement(driver.FindElement(By.Name("group"))).SelectByIndex(3);
 
         }
 

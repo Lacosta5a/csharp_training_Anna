@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
@@ -25,6 +26,7 @@ namespace WebAddressbookTests
                 {
                     app.Contact.Create(new ContactData("Elena"));
                     ContactData NewContact = new ContactData();
+                    ContactData.GetAll() = new List<ContactData>();
                     app.Contact.AddContactToGroup(NewContact, group);
                 }
                 ContactData ExistingContact = ContactData.GetAll().First();
