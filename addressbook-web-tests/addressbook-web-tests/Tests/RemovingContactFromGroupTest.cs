@@ -26,7 +26,7 @@ namespace WebAddressbookTests
                 {
                     app.Contact.Create(new ContactData("Elena"));
                     ContactData NewContact = new ContactData();
-                    ContactData.GetAll() = new List<ContactData>();
+                    List<ContactData> list= new List<ContactData>();
                     app.Contact.AddContactToGroup(NewContact, group);
                 }
                 ContactData ExistingContact = ContactData.GetAll().First();
