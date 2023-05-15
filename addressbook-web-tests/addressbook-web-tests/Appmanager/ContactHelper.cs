@@ -283,7 +283,7 @@ namespace WebAddressbookTests
         public void SelectGroupInFilter(int index)
         {
             driver.FindElement(By.Name("group")).Click();
-            new SelectElement(driver.FindElement(By.Name("group"))).SelectByIndex(3);
+            new SelectElement(driver.FindElement(By.Name("group"))).SelectByIndex(2);
 
         }
 
