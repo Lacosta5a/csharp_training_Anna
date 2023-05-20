@@ -24,9 +24,13 @@ namespace WebAddressbookTests
                 app.Contact.Create(new ContactData("Elena"));
             }
 
+            app.Contact.CheckIfAllContactsIncluded();
+
             List<ContactData> oldList = group.GetContacts();
+
             ContactData contact = ContactData.GetAll().Except(oldList).First();
-           
+
+   
 
             app.Contact.AddContactToGroup(contact,group);
 

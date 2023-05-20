@@ -12,6 +12,7 @@ using OpenQA.Selenium.DevTools.V108.Audits;
 using OpenQA.Selenium.DevTools.V109.CSS;
 using OpenQA.Selenium.Support.UI;
 using System.Reflection;
+using Google.Protobuf.WellKnownTypes;
 
 namespace WebAddressbookTests
 {
@@ -292,6 +293,19 @@ namespace WebAddressbookTests
             if (group.GetContacts().Count==0)
             {
                 AddContactToGroup(contact,group);
+            }
+        }
+
+        public void CheckIfAllContactsIncluded()
+        {
+            ContactData contact=new ContactData("Erika");
+            GroupData group = GroupData.GetAll()[0];
+            List<ContactData> oldList = group.GetContacts();
+            IList<ContactData> newList = ContactData.GetAll().Except(oldList).ToList();
+
+            if (newList.Count == 0)
+            {
+                Create(contact); 
             }
         }
     }
