@@ -18,7 +18,7 @@ namespace mantis_tests
         {
             OpenMainPage();
             OpenRegistrationForm();
-            FillRegistrationForm();
+            FillRegistrationForm(account);
             SubmitRegistration();
         }
 
