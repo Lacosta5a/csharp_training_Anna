@@ -13,6 +13,7 @@ namespace mantis_tests
         private FtpClient client;
         public FtpHelper(ApplicationManager manager) : base(manager) {
             client = new FtpClient();
+            client.Host = "localhost";
             client.Credentials = new System.Net.NetworkCredential("mantis","mantis");
             client.Connect();
         }
@@ -34,7 +35,6 @@ namespace mantis_tests
             {
                 return;
             }
-            client.Rename(path, backupPath);
             if (client.FileExists(path))
             {
                 client.DeleteFile(path);
