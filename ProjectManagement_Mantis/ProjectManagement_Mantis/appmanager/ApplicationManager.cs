@@ -8,30 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using OpenQA.Selenium.Support.UI;
-using System.Runtime.CompilerServices;
 
-namespace mantis_tests
+namespace ProjectManagement_Mantis
 {
     public class ApplicationManager
     {
         protected IWebDriver driver;
         protected string baseURL;
 
-        public RegistrationHelper Registration { get;  set; }
-        public FtpHelper Ftp { get; set; }
-        public JamesHelper James { get;  set; }
-        public MailHelper Mail { get;  set; }
+        protected LoginHelper loginHelper;
+        protected NavigationHelper navigator;
+
 
         private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
 
         public ApplicationManager ()
         {
             driver = new FirefoxDriver();
-            baseURL = "http://localhost:81/addressbook";
-            Registration = new RegistrationHelper(this);
-            Ftp = new FtpHelper(this);
-            James = new JamesHelper(this);
-            Mail = new MailHelper(this);
+            baseURL = "http://localhost:81/mantisbt-2.25.7";
+
+            loginHelper = new LoginHelper(this);
+            navigator = new NavigationHelper(this, baseURL);
         }
 
         ~ApplicationManager()
@@ -51,7 +48,7 @@ namespace mantis_tests
             if (! app.IsValueCreated)
             {
                 ApplicationManager newInstance = new ApplicationManager();
-                newInstance.driver.Url= "http://localhost:81/mantisbt-2.25.7/login_page.php";
+                newInstance.Navigator.GoToHomePage();
                 app.Value = newInstance;
             }
             return app.Value;
@@ -64,5 +61,22 @@ namespace mantis_tests
                 return driver;
             }
         }
+
+
+        public LoginHelper Auth
+        {
+            get
+            {
+                return loginHelper;
+            }
+        }
+
+        public NavigationHelper Navigator
+        {
+            get
+            {
+                return navigator;
+            }
+        }       
     }    
 }
