@@ -20,28 +20,22 @@ namespace ProjectManagement_Mantis
         }
         public void GoToHomePage()
         {
-            if (driver.Url == baseURL)
+            if (driver.Url == baseURL+ "/account_page.php")
             {
                 return;
             }
             driver.Navigate().GoToUrl(baseURL);
         }
-        public void GoToGroupsPage()
+        public void GoToManageProjectsPage()
         {
-            if (driver.Url == baseURL + "/group.php"
-                && IsElementPresent(By.Name("new")))
+            if (driver.Url == baseURL + "/manage_proj_page.php")
             {
                 return;
             }
-            driver.FindElement(By.LinkText("groups")).Click();
-        }
-        public void ReturnToHomePage()
-        {
-            if (driver.Url == baseURL)
-            {
-                return;
-            }
-            driver.FindElement(By.LinkText("home")).Click();
+            driver.FindElement(By.XPath("//div[@id='sidebar']/ul/li[6]/a/i")).Click();
+            driver.Navigate().GoToUrl(baseURL+ "/manage_overview_page.php");
+            driver.FindElement(By.LinkText("Manage Projects")).Click();
+            driver.Navigate().GoToUrl(baseURL + "/manage_proj_page.php");
         }
     }
 }

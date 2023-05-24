@@ -11,11 +11,24 @@ using OpenQA.Selenium.Support.UI;
 namespace ProjectManagement_Mantis
 {
     [TestFixture]
-    public class NewProjectCreation:TestBase
+    public class TestNewProjectCreation:TestBase
     {
         [Test]
         public void ProjectCreation()
         {
+            List<ProjectData> oldProjects = app.Projects.GetProjectsList();
+
+            ProjectData newProject = new ProjectData("Test");
+
+
+            app.Projects.Add(newProject);
+
+            List<ProjectData> newProjects = app.Projects.GetProjectsList();
+            oldProjects.Add(newProject);
+            oldProjects.Sort();
+            newProjects.Sort();
+
+            Assert.AreEqual(oldProjects, newProjects);
         }
     }
 }

@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebAddressbookTests
+namespace ProjectManagement_Mantis
 {
     public class AuthTestBase : TestBase
     {
         [OneTimeSetUp]
         public void SetupLogin()
         {
-            app.Auth.Login(new AccountData("admin", "secret"));
+            app.Auth.Login(new AccountData("administrator", "root"));
         }
     }
 }

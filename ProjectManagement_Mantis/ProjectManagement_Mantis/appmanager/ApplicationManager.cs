@@ -19,6 +19,7 @@ namespace ProjectManagement_Mantis
         protected LoginHelper loginHelper;
         protected NavigationHelper navigator;
 
+        public ProjectsHelper Projects { get;  set; }
 
         private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
 
@@ -29,6 +30,7 @@ namespace ProjectManagement_Mantis
 
             loginHelper = new LoginHelper(this);
             navigator = new NavigationHelper(this, baseURL);
+            Projects = new ProjectsHelper(this);
         }
 
         ~ApplicationManager()
