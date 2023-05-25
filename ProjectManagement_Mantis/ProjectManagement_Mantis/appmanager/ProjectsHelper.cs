@@ -34,15 +34,10 @@ namespace ProjectManagement_Mantis
             manager.Navigator.GoToManageProjectsPage();
             InitProjectCreation();
             FillInProjectForm(project);
-            CheckIfNameIsUnique(project.Name);
             SubmitProjectCreation();
             return;
         }
 
-        public ProjectsHelper CheckIfNameIsUnique(string name)
-        {
-            throw new NotImplementedException();
-        }
 
         public ProjectsHelper SubmitProjectCreation()
         {
@@ -61,6 +56,29 @@ namespace ProjectManagement_Mantis
         {
             driver.FindElement(By.XPath("//button[@type='submit']")).Click();
             return this;
+        }
+
+        public void CheckProjectPresence()
+        {
+            manager.Navigator.GoToManageProjectsPage();
+            if (IsElementPresent(By.XPath("//a[contains(@href,'manage_proj_edit_page.php')]")))
+            {
+                return;
+            }
+            else
+            {
+                Add(new ProjectData("*&^%$##GH"));
+            }
+
+        }
+
+        public ProjectsHelper Remove(int v)
+        {
+            driver.FindElement(By.XPath("//a[contains(@href,'manage_proj_edit_page.php')]")).Click();
+            driver.FindElement(By.XPath("//input[@value='Delete Project']")).Click();
+            driver.FindElement(By.XPath("//input[@value='Delete Project']")).Click();
+            return this;
+
         }
     }
 }

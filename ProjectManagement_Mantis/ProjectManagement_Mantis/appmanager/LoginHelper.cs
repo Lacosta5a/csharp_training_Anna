@@ -28,8 +28,9 @@ namespace ProjectManagement_Mantis
 
                 Logout();
             }
-            Type(By.Name("user"), account.Username);
-            Type(By.Name("pass"), account.Password);
+            Type(By.Id("username"), "administrator");
+            driver.FindElement(By.XPath("//input[@value='Login']")).Click();
+            Type(By.Id("password"), "root");
             driver.FindElement(By.XPath("//input[@value='Login']")).Click();
         }
 

@@ -11,27 +11,19 @@ using OpenQA.Selenium.Support.UI;
 namespace ProjectManagement_Mantis
 {
     [TestFixture]
-    public class TestNewProjectCreation:AuthTestBase
+    public class TestProjectRemoval:AuthTestBase
     {
-        public static IEnumerable<ProjectData> RandomProjectNameProvider()
+        [Test]
+        public void ProjectRemoval()
         {
-            List<ProjectData> projects = new List<ProjectData>();
-            for(int i = 0; i < 5; i++)
-            {
-                projects.Add(new ProjectData(GenerateRandomString(20)));
-            }
-            return projects;
-        }
+            app.Projects.CheckProjectPresence();
 
-        [Test,TestCaseSource("RandomProjectNameProvider")]
-        public void ProjectCreation(ProjectData project)
-        {
             List<ProjectData> oldProjects = app.Projects.GetProjectsList();
 
-            app.Projects.Add(project);
+            app.Projects.Remove(0);
 
             List<ProjectData> newProjects = app.Projects.GetProjectsList();
-            oldProjects.Add(project);
+            oldProjects.RemoveAt(0);
             oldProjects.Sort();
             newProjects.Sort();
 

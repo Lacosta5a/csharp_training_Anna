@@ -53,7 +53,7 @@ namespace ProjectManagement_Mantis
         {
             get
             {
-                return "name="+name;
+                return name;
             }
             set
             {
