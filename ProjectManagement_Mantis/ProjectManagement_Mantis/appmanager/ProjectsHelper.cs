@@ -74,9 +74,8 @@ namespace ProjectManagement_Mantis
             {
                 MantisProjects.MantisConnectPortTypeClient client = new MantisProjects.MantisConnectPortTypeClient();
                 MantisProjects.ProjectData project = new MantisProjects.ProjectData();
-                project.name = "ABC123";
+                project.name = "*&^%$##GH";
                 client.mc_project_add("administrator", "root", project);
-                //Add(new ProjectData("*&^%$##GH"));
             }
 
         }
