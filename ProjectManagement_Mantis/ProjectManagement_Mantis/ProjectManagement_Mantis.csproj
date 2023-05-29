@@ -47,12 +47,27 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.2.2.10\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.13.3.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.13.3\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorHosting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleBrowser.0.5.61.0\lib\net40\RazorHosting.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleBrowser, Version=0.5.61.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleBrowser.0.5.61.0\lib\net40\SimpleBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleBrowser.WebDriver, Version=0.5.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleBrowser.WebDriver.0.5.43\lib\net40\SimpleBrowser.WebDriver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
     <Reference Include="WebDriver, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.4.9.1\lib\net47\WebDriver.dll</HintPath>
     </Reference>
@@ -66,6 +81,11 @@
     <Compile Include="appmanager\LoginHelper.cs" />
     <Compile Include="appmanager\NavigationHelper.cs" />
     <Compile Include="appmanager\ProjectsHelper.cs" />
+    <Compile Include="Connected Services\MantisProjects\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="model\AccountData.cs" />
     <Compile Include="model\ProjectData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,9 +95,67 @@
     <Compile Include="tests\TestProjectRemoval.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\MantisProjects\mantisconnect.wsdl" />
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.AccountData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.CustomFieldDefinitionData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.FilterData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.HistoryData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.IssueData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.IssueHeaderData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.ObjectRef.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.ProfileDataSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.ProjectAttachmentData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.ProjectData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.ProjectVersionData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.TagDataSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MantisProjects\ProjectManagement_Mantis.MantisProjects.UserData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MantisProjects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MantisProjects\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MantisProjects\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MantisProjects\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

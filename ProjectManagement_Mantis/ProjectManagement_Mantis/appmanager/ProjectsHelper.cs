@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SimpleBrowser.WebDriver;
 using System.Threading.Tasks;
+using SimpleBrowser;
 
 namespace ProjectManagement_Mantis
 {
@@ -18,15 +20,18 @@ namespace ProjectManagement_Mantis
 
         public List<ProjectData> GetProjectsList()
         {
-            List<ProjectData>projects=new List<ProjectData>();
 
-            manager.Navigator.GoToManageProjectsPage();
-            ICollection<IWebElement> elements =driver.FindElements(By.XPath("//a[contains(@href,'manage_proj_edit_page.php')]"));
-            foreach(IWebElement element in elements)
-            {
-                projects.Add(new ProjectData(element.Text));
-            }
+            MantisProjects.MantisConnectPortTypeClient client = new MantisProjects.MantisConnectPortTypeClient();
+            List < ProjectData > projects = new List<ProjectData>();
+            client.mc_projects_get_user_accessible("administrator", "root");
             return projects;
+
+            //manager.Navigator.GoToManageProjectsPage();
+            //ICollection<IWebElement> elements =driver.FindElements(By.XPath("//a[contains(@href,'manage_proj_edit_page.php')]"));
+            //foreach(IWebElement element in elements)
+            //{
+               // projects.Add(new ProjectData(element.Text));
+            //}
         }
 
         public void Add(ProjectData project)
@@ -67,7 +72,11 @@ namespace ProjectManagement_Mantis
             }
             else
             {
-                Add(new ProjectData("*&^%$##GH"));
+                MantisProjects.MantisConnectPortTypeClient client = new MantisProjects.MantisConnectPortTypeClient();
+                MantisProjects.ProjectData project = new MantisProjects.ProjectData();
+                project.name = "ABC123";
+                client.mc_project_add("administrator", "root", project);
+                //Add(new ProjectData("*&^%$##GH"));
             }
 
         }
