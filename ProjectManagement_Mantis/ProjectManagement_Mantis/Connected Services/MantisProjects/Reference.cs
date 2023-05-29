@@ -15,16 +15,16 @@ namespace ProjectManagement_Mantis.MantisProjects {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://futureware.biz/mantisconnect", ConfigurationName="MantisProjects.MantisConnectPortType")]
     public interface MantisConnectPortType {
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_version", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_version", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string mc_version();
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_version", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_version", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<string> mc_versionAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_login", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_login", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -38,11 +38,11 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.UserData mc_login(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_login", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_login", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.UserData> mc_loginAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_status", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_status", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -56,11 +56,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ObjectRef[] mc_enum_status(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_status", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_status", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ObjectRef[]> mc_enum_statusAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_priorities", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_priorities" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -74,11 +75,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ObjectRef[] mc_enum_priorities(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_priorities", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_priorities" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ObjectRef[]> mc_enum_prioritiesAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_severities", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_severities" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -92,12 +95,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ObjectRef[] mc_enum_severities(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_severities", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_severities" +
+            "", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ObjectRef[]> mc_enum_severitiesAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_reproducibilitie" +
-            "s", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_reproducib" +
+            "ilities", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -111,12 +115,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ObjectRef[] mc_enum_reproducibilities(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_reproducibilitie" +
-            "s", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_reproducib" +
+            "ilities", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ObjectRef[]> mc_enum_reproducibilitiesAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_projections", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_projection" +
+            "s", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -130,11 +135,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ObjectRef[] mc_enum_projections(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_projections", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_projection" +
+            "s", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ObjectRef[]> mc_enum_projectionsAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_etas", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_etas", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -148,11 +154,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ObjectRef[] mc_enum_etas(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_etas", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_etas", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ObjectRef[]> mc_enum_etasAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_resolutions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_resolution" +
+            "s", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -166,11 +173,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ObjectRef[] mc_enum_resolutions(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_resolutions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_resolution" +
+            "s", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ObjectRef[]> mc_enum_resolutionsAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_access_levels", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_access_lev" +
+            "els", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -184,11 +193,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ObjectRef[] mc_enum_access_levels(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_access_levels", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_access_lev" +
+            "els", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ObjectRef[]> mc_enum_access_levelsAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_project_status", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_project_st" +
+            "atus", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -202,12 +213,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ObjectRef[] mc_enum_project_status(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_project_status", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_project_st" +
+            "atus", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ObjectRef[]> mc_enum_project_statusAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_project_view_sta" +
-            "tes", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_project_vi" +
+            "ew_states", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -221,12 +233,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ObjectRef[] mc_enum_project_view_states(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_project_view_sta" +
-            "tes", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_project_vi" +
+            "ew_states", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ObjectRef[]> mc_enum_project_view_statesAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_view_states", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_view_state" +
+            "s", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -240,12 +253,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ObjectRef[] mc_enum_view_states(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_view_states", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_view_state" +
+            "s", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ObjectRef[]> mc_enum_view_statesAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_custom_field_typ" +
-            "es", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_custom_fie" +
+            "ld_types", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -259,12 +273,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ObjectRef[] mc_enum_custom_field_types(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_custom_field_typ" +
-            "es", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_custom_fie" +
+            "ld_types", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ObjectRef[]> mc_enum_custom_field_typesAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_get", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -278,11 +292,11 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string mc_enum_get(string username, string password, string enumeration);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_enum_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_enum_get", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<string> mc_enum_getAsync(string username, string password, string enumeration);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_exists", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_exists", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -296,11 +310,11 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_exists(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_exists", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_exists", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_issue_existsAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_get", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -314,11 +328,11 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.IssueData mc_issue_get(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_get", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.IssueData> mc_issue_getAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issues_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issues_get", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -332,11 +346,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.IssueData[] mc_issues_get(string username, string password, string[] issue_ids);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issues_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issues_get", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.IssueData[]> mc_issues_getAsync(string username, string password, string[] issue_ids);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issues_get_header", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issues_get_head" +
+            "er", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -350,11 +365,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.IssueHeaderData[] mc_issues_get_header(string username, string password, string[] issue_ids);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issues_get_header", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issues_get_head" +
+            "er", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.IssueHeaderData[]> mc_issues_get_headerAsync(string username, string password, string[] issue_ids);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_get_history", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_get_histo" +
+            "ry", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -368,11 +385,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.HistoryData[] mc_issue_get_history(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_get_history", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_get_histo" +
+            "ry", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.HistoryData[]> mc_issue_get_historyAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_get_biggest_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_get_bigge" +
+            "st_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -387,13 +406,14 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_issue_get_biggest_id(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_get_biggest_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_get_bigge" +
+            "st_id", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_issue_get_biggest_idAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_get_id_from_sum" +
-            "mary", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_get_id_fr" +
+            "om_summary", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -408,13 +428,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_issue_get_id_from_summary(string username, string password, string summary);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_get_id_from_sum" +
-            "mary", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_get_id_fr" +
+            "om_summary", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_issue_get_id_from_summaryAsync(string username, string password, string summary);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -429,12 +449,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_issue_add(string username, string password, ProjectManagement_Mantis.MantisProjects.IssueData issue);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_add", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_issue_addAsync(string username, string password, ProjectManagement_Mantis.MantisProjects.IssueData issue);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_update", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -448,11 +468,11 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_update(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issueId, ProjectManagement_Mantis.MantisProjects.IssueData issue);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_update", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_issue_updateAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issueId, ProjectManagement_Mantis.MantisProjects.IssueData issue);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_set_tags", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_set_tags", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -466,11 +486,11 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_set_tags(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, ProjectManagement_Mantis.MantisProjects.TagData[] tags);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_set_tags", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_set_tags", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_issue_set_tagsAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, ProjectManagement_Mantis.MantisProjects.TagData[] tags);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -484,11 +504,11 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_delete", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_issue_deleteAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_note_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_note_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -503,12 +523,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_issue_note_add(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, ProjectManagement_Mantis.MantisProjects.IssueNoteData note);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_note_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_note_add", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_issue_note_addAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, ProjectManagement_Mantis.MantisProjects.IssueNoteData note);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_note_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_note_dele" +
+            "te", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -522,11 +543,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_note_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_note_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_note_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_note_dele" +
+            "te", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_issue_note_deleteAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_note_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_note_update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_note_upda" +
+            "te", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -540,12 +563,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_note_update(string username, string password, ProjectManagement_Mantis.MantisProjects.IssueNoteData note);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_note_update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_note_upda" +
+            "te", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_issue_note_updateAsync(string username, string password, ProjectManagement_Mantis.MantisProjects.IssueNoteData note);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_relationship_ad" +
-            "d", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_relations" +
+            "hip_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -560,14 +584,14 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_issue_relationship_add(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, ProjectManagement_Mantis.MantisProjects.RelationshipData relationship);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_relationship_ad" +
-            "d", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_relations" +
+            "hip_add", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_issue_relationship_addAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, ProjectManagement_Mantis.MantisProjects.RelationshipData relationship);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_relationship_de" +
-            "lete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_relations" +
+            "hip_delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -581,12 +605,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_relationship_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string relationship_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_relationship_de" +
-            "lete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_relations" +
+            "hip_delete", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_issue_relationship_deleteAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string relationship_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_attachment_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_attachmen" +
+            "t_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -601,13 +626,14 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_issue_attachment_add(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, string name, string file_type, [System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")] byte[] content);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_attachment_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_attachmen" +
+            "t_add", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_issue_attachment_addAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, string name, string file_type, [System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")] byte[] content);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_attachment_dele" +
-            "te", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_attachmen" +
+            "t_delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -621,12 +647,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_attachment_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_attachment_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_attachment_dele" +
-            "te", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_attachmen" +
+            "t_delete", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_issue_attachment_deleteAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_attachment_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_attachment_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_attachmen" +
+            "t_get", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -641,12 +668,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")]
         byte[] mc_issue_attachment_get(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_attachment_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_attachment_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_attachmen" +
+            "t_get", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")]
         System.Threading.Tasks.Task<byte[]> mc_issue_attachment_getAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_attachment_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -661,12 +689,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_add(string username, string password, ProjectManagement_Mantis.MantisProjects.ProjectData project);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_add", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_project_addAsync(string username, string password, ProjectManagement_Mantis.MantisProjects.ProjectData project);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -680,11 +708,11 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_project_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_delete", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_project_deleteAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_update", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -698,12 +726,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_project_update(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, ProjectManagement_Mantis.MantisProjects.ProjectData project);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_update", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_project_updateAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, ProjectManagement_Mantis.MantisProjects.ProjectData project);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_id_from_n" +
-            "ame", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_id_" +
+            "from_name", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -718,14 +746,14 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_get_id_from_name(string username, string password, string project_name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_id_from_n" +
-            "ame", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_id_" +
+            "from_name", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_project_get_id_from_nameAsync(string username, string password, string project_name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_issues_fo" +
-            "r_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_iss" +
+            "ues_for_user", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -739,12 +767,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.IssueData[] mc_project_get_issues_for_user(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string filter_type, ProjectManagement_Mantis.MantisProjects.AccountData target_user, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_issues_fo" +
-            "r_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_iss" +
+            "ues_for_user", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.IssueData[]> mc_project_get_issues_for_userAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string filter_type, ProjectManagement_Mantis.MantisProjects.AccountData target_user, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_issues", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_iss" +
+            "ues", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -758,12 +787,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.IssueData[] mc_project_get_issues(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_issues", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_iss" +
+            "ues", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.IssueData[]> mc_project_get_issuesAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_issue_hea" +
-            "ders", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_iss" +
+            "ue_headers", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -777,12 +807,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.IssueHeaderData[] mc_project_get_issue_headers(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_issue_hea" +
-            "ders", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_iss" +
+            "ue_headers", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.IssueHeaderData[]> mc_project_get_issue_headersAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_users", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_use" +
+            "rs", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -796,12 +827,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.AccountData[] mc_project_get_users(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string access);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_users", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_use" +
+            "rs", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.AccountData[]> mc_project_get_usersAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string access);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_projects_get_user_acc" +
-            "essible", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_projects_get_us" +
+            "er_accessible", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -815,13 +847,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ProjectData[] mc_projects_get_user_accessible(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_projects_get_user_acc" +
-            "essible", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_projects_get_us" +
+            "er_accessible", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ProjectData[]> mc_projects_get_user_accessibleAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_categorie" +
-            "s", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_cat" +
+            "egories", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -835,12 +867,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string[] mc_project_get_categories(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_categorie" +
-            "s", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_cat" +
+            "egories", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<string[]> mc_project_get_categoriesAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_add_category", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_add_cat" +
+            "egory", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -855,13 +888,14 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_add_category(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string p_category_name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_add_category", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_add_cat" +
+            "egory", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_project_add_categoryAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string p_category_name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_delete_catego" +
-            "ry", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_delete_" +
+            "category", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -876,14 +910,14 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_delete_category(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string p_category_name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_delete_catego" +
-            "ry", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_delete_" +
+            "category", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_project_delete_categoryAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string p_category_name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_rename_catego" +
-            "ry_by_name", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_rename_" +
+            "category_by_name", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -898,13 +932,14 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_rename_category_by_name(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string p_category_name, string p_category_name_new, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string p_assigned_to);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_rename_catego" +
-            "ry_by_name", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_rename_" +
+            "category_by_name", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_project_rename_category_by_nameAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string p_category_name, string p_category_name_new, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string p_assigned_to);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_versions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_ver" +
+            "sions", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -918,11 +953,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ProjectVersionData[] mc_project_get_versions(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_versions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_ver" +
+            "sions", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ProjectVersionData[]> mc_project_get_versionsAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_version_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_version" +
+            "_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -937,13 +974,14 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_version_add(string username, string password, ProjectManagement_Mantis.MantisProjects.ProjectVersionData version);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_version_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_version" +
+            "_add", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_project_version_addAsync(string username, string password, ProjectManagement_Mantis.MantisProjects.ProjectVersionData version);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_version_updat" +
-            "e", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_version" +
+            "_update", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -957,13 +995,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_project_version_update(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string version_id, ProjectManagement_Mantis.MantisProjects.ProjectVersionData version);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_version_updat" +
-            "e", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_version" +
+            "_update", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_project_version_updateAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string version_id, ProjectManagement_Mantis.MantisProjects.ProjectVersionData version);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_version_delet" +
-            "e", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_version" +
+            "_delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -977,13 +1015,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_project_version_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string version_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_version_delet" +
-            "e", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_version" +
+            "_delete", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_project_version_deleteAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string version_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_released_" +
-            "versions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_rel" +
+            "eased_versions", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -997,13 +1035,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ProjectVersionData[] mc_project_get_released_versions(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_released_" +
-            "versions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_rel" +
+            "eased_versions", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ProjectVersionData[]> mc_project_get_released_versionsAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_unrelease" +
-            "d_versions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_unr" +
+            "eleased_versions", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1017,13 +1055,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ProjectVersionData[] mc_project_get_unreleased_versions(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_unrelease" +
-            "d_versions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_unr" +
+            "eleased_versions", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ProjectVersionData[]> mc_project_get_unreleased_versionsAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_attachmen" +
-            "ts", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_att" +
+            "achments", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1037,13 +1075,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ProjectAttachmentData[] mc_project_get_attachments(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_attachmen" +
-            "ts", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_att" +
+            "achments", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ProjectAttachmentData[]> mc_project_get_attachmentsAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_custom_fi" +
-            "elds", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_cus" +
+            "tom_fields", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1057,13 +1095,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.CustomFieldDefinitionData[] mc_project_get_custom_fields(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_custom_fi" +
-            "elds", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_cus" +
+            "tom_fields", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.CustomFieldDefinitionData[]> mc_project_get_custom_fieldsAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_attachment_ge" +
-            "t", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_attachm" +
+            "ent_get", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1078,14 +1116,14 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")]
         byte[] mc_project_attachment_get(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_attachment_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_attachment_ge" +
-            "t", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_attachm" +
+            "ent_get", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")]
         System.Threading.Tasks.Task<byte[]> mc_project_attachment_getAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_attachment_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_attachment_ad" +
-            "d", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_attachm" +
+            "ent_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1100,14 +1138,14 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_attachment_add(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string name, string title, string description, string file_type, [System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")] byte[] content);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_attachment_ad" +
-            "d", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_attachm" +
+            "ent_add", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_project_attachment_addAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string name, string title, string description, string file_type, [System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")] byte[] content);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_attachment_de" +
-            "lete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_attachm" +
+            "ent_delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1121,13 +1159,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_project_attachment_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_attachment_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_attachment_de" +
-            "lete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_attachm" +
+            "ent_delete", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_project_attachment_deleteAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_attachment_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_all_subpr" +
-            "ojects", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_all" +
+            "_subprojects", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1141,12 +1179,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string[] mc_project_get_all_subprojects(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_project_get_all_subpr" +
-            "ojects", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_project_get_all" +
+            "_subprojects", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<string[]> mc_project_get_all_subprojectsAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_filter_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_filter_get", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1160,11 +1198,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.FilterData[] mc_filter_get(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_filter_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_filter_get", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.FilterData[]> mc_filter_getAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_filter_get_issues", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_filter_get_issu" +
+            "es", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1178,12 +1217,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.IssueData[] mc_filter_get_issues(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string filter_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_filter_get_issues", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_filter_get_issu" +
+            "es", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.IssueData[]> mc_filter_get_issuesAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string filter_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_filter_get_issue_head" +
-            "ers", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_filter_get_issu" +
+            "e_headers", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1197,13 +1237,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.IssueHeaderData[] mc_filter_get_issue_headers(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string filter_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_filter_get_issue_head" +
-            "ers", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_filter_get_issu" +
+            "e_headers", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.IssueHeaderData[]> mc_filter_get_issue_headersAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string filter_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_filter_search_issue_h" +
-            "eaders", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_filter_search_i" +
+            "ssue_headers", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1217,12 +1257,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.IssueHeaderData[] mc_filter_search_issue_headers(string username, string password, ProjectManagement_Mantis.MantisProjects.FilterSearchData filter, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_filter_search_issue_h" +
-            "eaders", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_filter_search_i" +
+            "ssue_headers", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.IssueHeaderData[]> mc_filter_search_issue_headersAsync(string username, string password, ProjectManagement_Mantis.MantisProjects.FilterSearchData filter, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_filter_search_issues", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_filter_search_i" +
+            "ssues", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1236,12 +1277,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.IssueData[] mc_filter_search_issues(string username, string password, ProjectManagement_Mantis.MantisProjects.FilterSearchData filter, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_filter_search_issues", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_filter_search_i" +
+            "ssues", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.IssueData[]> mc_filter_search_issuesAsync(string username, string password, ProjectManagement_Mantis.MantisProjects.FilterSearchData filter, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_filter_search_issue_i" +
-            "ds", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_filter_search_i" +
+            "ssue_ids", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1255,12 +1297,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string[] mc_filter_search_issue_ids(string username, string password, ProjectManagement_Mantis.MantisProjects.FilterSearchData filter, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_filter_search_issue_i" +
-            "ds", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_filter_search_i" +
+            "ssue_ids", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<string[]> mc_filter_search_issue_idsAsync(string username, string password, ProjectManagement_Mantis.MantisProjects.FilterSearchData filter, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_config_get_string", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_config_get_stri" +
+            "ng", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1274,11 +1317,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string mc_config_get_string(string username, string password, string config_var);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_config_get_string", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_config_get_stri" +
+            "ng", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<string> mc_config_get_stringAsync(string username, string password, string config_var);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_checkin", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_checkin", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1292,11 +1336,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_checkin(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, string comment, bool @fixed);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_issue_checkin", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_issue_checkin", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_issue_checkinAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, string comment, bool @fixed);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_user_pref_get_pref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_user_pref_get_p" +
+            "ref", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1310,12 +1355,13 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string mc_user_pref_get_pref(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string pref_name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_user_pref_get_pref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_user_pref_get_p" +
+            "ref", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<string> mc_user_pref_get_prefAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string pref_name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_user_profiles_get_all" +
-            "", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_user_profiles_g" +
+            "et_all", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1329,12 +1375,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.ProfileDataSearchResult mc_user_profiles_get_all(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_user_profiles_get_all" +
-            "", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_user_profiles_g" +
+            "et_all", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.ProfileDataSearchResult> mc_user_profiles_get_allAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_tag_get_all", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_tag_get_all", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1348,11 +1394,11 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         ProjectManagement_Mantis.MantisProjects.TagDataSearchResult mc_tag_get_all(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_tag_get_all", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_tag_get_all", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ProjectManagement_Mantis.MantisProjects.TagDataSearchResult> mc_tag_get_allAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_tag_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_tag_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1367,12 +1413,12 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_tag_add(string username, string password, ProjectManagement_Mantis.MantisProjects.TagData tag);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_tag_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_tag_add", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         System.Threading.Tasks.Task<string> mc_tag_addAsync(string username, string password, ProjectManagement_Mantis.MantisProjects.TagData tag);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_tag_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_tag_delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
@@ -1386,7 +1432,7 @@ namespace ProjectManagement_Mantis.MantisProjects {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_tag_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string tag_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://www.mantisbt.org/bugs/api/soap/mantisconnect.php/mc_tag_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:81/mantisbt-2.25.7/api/soap/mantisconnect.php/mc_tag_delete", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> mc_tag_deleteAsync(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string tag_id);
     }

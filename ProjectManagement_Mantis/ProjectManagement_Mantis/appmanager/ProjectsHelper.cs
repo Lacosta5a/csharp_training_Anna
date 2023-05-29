@@ -24,7 +24,7 @@ namespace ProjectManagement_Mantis
             MantisProjects.MantisConnectPortTypeClient client = new MantisProjects.MantisConnectPortTypeClient();
             List < ProjectData > projects = new List<ProjectData>();
             client.mc_projects_get_user_accessible("administrator", "root");
-            return projects;
+            return ;
 
             //manager.Navigator.GoToManageProjectsPage();
             //ICollection<IWebElement> elements =driver.FindElements(By.XPath("//a[contains(@href,'manage_proj_edit_page.php')]"));
