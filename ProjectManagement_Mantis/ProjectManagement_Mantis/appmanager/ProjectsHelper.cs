@@ -19,16 +19,17 @@ namespace ProjectManagement_Mantis
 
         }
 
-        public MantisProjects.ProjectData[] GetProjectsList()
+        public List<ProjectData> GetProjectsList()
         {
 
             MantisProjects.MantisConnectPortTypeClient client = new MantisProjects.MantisConnectPortTypeClient();
+            List<ProjectData> projects = new List<ProjectData>();
             MantisProjects.ProjectData[] mantisProjects = client.mc_projects_get_user_accessible("administrator", "root");
             foreach (MantisProjects.ProjectData project in mantisProjects)
             {
-                project.Add(new ProjectData(project.name));
+                projects.Add(new ProjectData(project.name));
             }
-            return mantisProjects;
+            return projects;
         }
 
         public void Add(ProjectData project)
