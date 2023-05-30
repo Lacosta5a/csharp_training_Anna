@@ -8,6 +8,7 @@ using System.Text;
 using SimpleBrowser.WebDriver;
 using System.Threading.Tasks;
 using SimpleBrowser;
+using OpenQA.Selenium.DevTools.V113.FedCm;
 
 namespace ProjectManagement_Mantis
 {
@@ -18,20 +19,16 @@ namespace ProjectManagement_Mantis
 
         }
 
-        public List<ProjectData> GetProjectsList()
+        public MantisProjects.ProjectData[] GetProjectsList()
         {
 
             MantisProjects.MantisConnectPortTypeClient client = new MantisProjects.MantisConnectPortTypeClient();
-            List < ProjectData > projects = new List<ProjectData>();
-            client.mc_projects_get_user_accessible("administrator", "root");
-            return ;
-
-            //manager.Navigator.GoToManageProjectsPage();
-            //ICollection<IWebElement> elements =driver.FindElements(By.XPath("//a[contains(@href,'manage_proj_edit_page.php')]"));
-            //foreach(IWebElement element in elements)
-            //{
-               // projects.Add(new ProjectData(element.Text));
-            //}
+            MantisProjects.ProjectData[] mantisProjects = client.mc_projects_get_user_accessible("administrator", "root");
+            foreach (MantisProjects.ProjectData project in mantisProjects)
+            {
+                project.Add(new ProjectData(project.name));
+            }
+            return mantisProjects;
         }
 
         public void Add(ProjectData project)

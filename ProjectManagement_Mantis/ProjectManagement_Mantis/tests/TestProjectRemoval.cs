@@ -18,11 +18,11 @@ namespace ProjectManagement_Mantis
         {
             app.Projects.CheckProjectPresence();
 
-            List<ProjectData> oldProjects = app.Projects.GetProjectsList();
+            MantisProjects.ProjectData[] oldProjects = app.Projects.GetProjectsList();
 
             app.Projects.Remove(0);
 
-            List<ProjectData> newProjects = app.Projects.GetProjectsList();
+            MantisProjects.ProjectData[] newProjects = app.Projects.GetProjectsList();
             oldProjects.RemoveAt(0);
             oldProjects.Sort();
             newProjects.Sort();
